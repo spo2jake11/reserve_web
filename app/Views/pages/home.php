@@ -10,7 +10,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Reservation</a></li>
+            <li class="nav-item"><a href="reserve" class="nav-link">Reservation</a></li>
             <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
         </ul>
     </header>
@@ -27,14 +27,14 @@
     </section>
     
     
-<style>
-    body{
-        background-color: skyblue;
-    }
-    .main_body{
-        background-color: lightgray;
-    }
-</style>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        .main_body{
+            background-color: lightgray;
+        }
+    </style>
 <?php
     $this->endSection();
 ?>
