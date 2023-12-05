@@ -19,11 +19,28 @@ class ReservationController extends BaseController
     public function create()
     {
         //Validation Rules
-        $rules = [
-            'userName' => 'trim|required|min_length[8]',
-            'userEmail' => 'trim|required|valid_email',
-            'userDate, userTime, userTable' => 'trim|required'
-        ];
+        $validate = $this->validate([
+            'userName' => [
+                'rules' => 'required|min_length[8]',
+                'errors' => [
+                    'required' => 'Sorry. Name is required.'
+                ]
+            ],
+            'userEmail' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Sorry. Email is required.',
+                    'valid_email' => 'Email is not valid.'
+                ]
+            ],
+            'userDate, userTime, userTable' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Please select proper information.'
+                ]
+            ],
+            'userCode' => 'is_unique[reservation_db.reserve_code]'
+        ]);
 
         //Data to be Transfer
         $data = [
@@ -31,12 +48,14 @@ class ReservationController extends BaseController
             'email' => $this->request->getPost('userEmail'),
             'seat_taken' => $this->request->getPost('userTable'),
             'reserve_date' => $this->request->getPost('userDate'),
-            'reserve_time' => strtotime((string)$this->request->getPost('userTime')),
+            'reserve_time' => date('H:i', (int)$this->request->getPost('userTime')),
+            'payment_mode' => $this->request->getPost('userPayment'),
+            'reserve_code' => rand(000000000, 999999999),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        if ($this->validate($rules)) {
+        if ($validate) {
             return redirect()->to('/reserve')->with('errors', $this->validator->getErrors());
         }
 

@@ -47,39 +47,50 @@ $this->section('body');
         <h1 class="h3 mb-3 fw-normal">Reservation Form</h1>
 
         <div class="form-floating my-1">
-            <input type="email" name="userEmail" class="form-control" id="floatingEmail" placeholder="name@example.com">
+            <input type="email" name="userEmail" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
             <label for="floatingEmail">Email address</label>
         </div>
 
         <div class="form-floating my-1">
-            <input type="text" name="userName" id="floatingName" class="form-control" placeholder="Name">
+            <input type="text" name="userName" id="floatingName" class="form-control" placeholder="Name" required>
             <label for="floatingName">Name</label>
         </div>
 
+        <label for="floatingDate">Date of Reservation</label>
         <div class="form-floating my-1">
-            <input type="date" name="userDate" id="floatingDate" class="form-control">
-            <label for="floatingDate"></label>
+            <input type="date" name="userDate" id="floatingDate" class="form-control" required>
         </div>
 
+        <label for="floatingTime">Time of Reservation</label>
         <div class="form-floating my-1">
-            <select name="userTime" id="floatingTime" class="form-select">
-                <option selected>Select time</option>
-                <?php for ($i = 15; $i <= 21; $i++) : ?>
-                    <option value="<?= '$i:00' ?>"><?= "$i:00" ?></option>
-                <?php endfor; ?>
+            <select name="userTime" id="floatingTime" class="form-select" required>
+                <?php
+                $times = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+                foreach ($times as $time) : ?>
+                    <option value=<?= strtotime($time) ?>><?= $time ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
 
-        <div class="form-floating">
-            <select name="userTable" id="floatingTable" class="form-select">
-                <option selected>Expected seat/s</option>
+        <label for="floatingTable">Expected Seat/s</label>
+        <div class="form-floating my-1">
+            <select name="userTable" id="floatingTable" class="form-select" required>
                 <?php for ($i = 1; $i <= 10; $i++) : ?>
                     <option value="<?= $i ?>"><?= $i ?></option>
                 <?php endfor; ?>
             </select>
         </div>
 
-        <button class="btn btn-primary w-100 py-2" type="submit">Review Reservation</button>
+        <label for="floatingPayment">Mode of Payment</label>
+        <div class="form-floating my-1">
+            <select name="userPayment" id="floatingPayment" class="form-select" required>
+                <option value="Cash">Cash</option>
+                <option value="Credit">Credit Card</option>
+            </select>
+        </div>
+
+        <input type="hidden" name="userCode" value=<?= rand(000000000, 999999999) ?>>
+        <button class="btn btn-primary w-100 py-2 my-1" type="submit">Review Reservation</button>
     </form>
 </main>
 <style>
