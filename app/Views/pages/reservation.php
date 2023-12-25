@@ -18,21 +18,7 @@ $this->section('body');
     </ul>
 </header>
 
-<?php if (!empty($errors)) : ?>
-    <?php foreach ($errors as $error) : ?>
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading"></h4>
-            <p><?= $error ?></p>
-            <p class="mb-0"></p>
-        </div>
-    <?php endforeach; ?>
-<?php elseif (!empty($message)) : ?>
-    <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading"></h4>
-        <p><?= $message ?></p>
-        <p class="mb-0"></p>
-    </div>
-<?php endif; ?>
+
 
 <main class="m-auto row d-flex container">
     <div class="col d-flex">
@@ -44,52 +30,113 @@ $this->section('body');
     </div>
     <form class="col d-flex flex-column" action="/reserve" method="POST">
 
+        <?php
+        if (session()->has('message')) : ?>
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong><?= session("message") ?></strong>
+            </div>
+        <?php
+        endif ?>
+
         <h1 class="h3 mb-3 fw-normal">Reservation Form</h1>
-
-        <div class="form-floating my-1">
-            <input type="email" name="userEmail" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+        <!-- Email input -->
+        <div class="form my-1">
             <label for="floatingEmail">Email address</label>
+            <input type="text" name="Email" class="form-control my-1" id="floatingEmail" placeholder="name@example.com">
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Email")) : ?>
+                    <p><?= session("validation")->getError("Email") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
-        <div class="form-floating my-1">
-            <input type="text" name="userName" id="floatingName" class="form-control" placeholder="Name" required>
+        <!-- Name input -->
+        <div class="form my-1">
             <label for="floatingName">Name</label>
+            <input type="text" name="Name" id="floatingName" class="form-control my-1" placeholder="John Doe">
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Name")) : ?>
+                    <p><?= session("validation")->getError("Name") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
+        <!-- Date input -->
         <label for="floatingDate">Date of Reservation</label>
         <div class="form-floating my-1">
-            <input type="date" name="userDate" id="floatingDate" class="form-control" required>
+            <input type="date" name="Date" id="floatingDate" class="form-control">
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Date")) : ?>
+                    <p><?= session("validation")->getError("Date") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
+        <!-- Reservation time input. Default Time 15:00 or 3:00pm -->
         <label for="floatingTime">Time of Reservation</label>
         <div class="form-floating my-1">
-            <select name="userTime" id="floatingTime" class="form-select" required>
+            <select name="Time" id="floatingTime" class="form-select">
+                <option value="0" selected>Select time</option>
                 <?php
                 $times = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
                 foreach ($times as $time) : ?>
                     <option value=<?= strtotime($time) ?>><?= $time ?></option>
                 <?php endforeach; ?>
             </select>
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Time")) : ?>
+                    <p><?= session("validation")->getError("Time") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
+        <!-- Table seat input -->
         <label for="floatingTable">Expected Seat/s</label>
         <div class="form-floating my-1">
-            <select name="userTable" id="floatingTable" class="form-select" required>
+            <select name="Table" id="floatingTable" class="form-select">
+                <option value="0" selected>Select how many seat/s</option>
                 <?php for ($i = 1; $i <= 10; $i++) : ?>
                     <option value="<?= $i ?>"><?= $i ?></option>
                 <?php endfor; ?>
             </select>
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Table")) : ?>
+                    <p><?= session("validation")->getError("Table") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
+        <!-- Payment Input -->
         <label for="floatingPayment">Mode of Payment</label>
         <div class="form-floating my-1">
-            <select name="userPayment" id="floatingPayment" class="form-select" required>
+            <select name="Payment" id="floatingPayment" class="form-select">
+                <option value="None" selected>Select payment method</option>
                 <option value="Cash">Cash</option>
                 <option value="Credit">Credit Card</option>
             </select>
+            <span style="color:red">
+                <?php
+                if (session()->has("validation") &&  session("validation")->hasError("Payment")) : ?>
+                    <p><?= session("validation")->getError("Payment") ?></p>
+                <?php
+                endif;
+                ?>
+            </span>
         </div>
-
-        <input type="hidden" name="userCode" value=<?= rand(000000000, 999999999) ?>>
+        <!-- Hidden input to generate random code -->
+        <input type="hidden" name="Code" value=<?= rand(000000000, 999999999) ?>>
+        <!-- Button -->
         <button class="btn btn-primary w-100 py-2 my-1" type="submit">Review Reservation</button>
     </form>
 </main>

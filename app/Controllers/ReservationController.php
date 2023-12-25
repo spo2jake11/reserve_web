@@ -11,56 +11,64 @@ class ReservationController extends BaseController
 {
     public function index()
     {
-        $data = [
-            'message' => null
-        ];
-        return view('pages/reservation', $data);
+        return view('pages/reservation');
     }
     public function create()
     {
         //Validation Rules
-        $validate = $this->validate([
-            'userName' => [
-                'rules' => 'required|min_length[8]',
-                'errors' => [
-                    'required' => 'Sorry. Name is required.'
-                ]
+        $rules = [
+            "Name"      => "required|min_length[8]",
+            "Email"     => "required|valid_email|isGmail",
+            "Table"     => "isTaken",
+            "Date"      => "required|isLate",
+            "Time"      => "noTime",
+            "Payment"   => "isPayment"
+        ];
+        $message = [
+            "Email"     => [
+                "isGmail" => "Sorry. Only Gmail is accepted as of now."
             ],
-            'userEmail' => [
-                'rules' => 'required|valid_email',
-                'errors' => [
-                    'required' => 'Sorry. Email is required.',
-                    'valid_email' => 'Email is not valid.'
-                ]
+            "Table"     => [
+                "isTaken" => "Accepting reservation for at least 1 person."
             ],
-            'userDate, userTime, userTable' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Please select proper information.'
-                ]
+            "Date"      => [
+                "isLate" => "Only accepting at least a day after for reservation. Cannot accept previous date."
             ],
-            'userCode' => 'is_unique[reservation_db.reserve_code]'
-        ]);
+            "Time"      => [
+                "noTime" => "Please select time available."
+            ],
+            "Payment"   => [
+                "isPayment" => "Please select a payment method available."
+            ]
+        ];
 
         //Data to be Transfer
         $data = [
-            'name' => $this->request->getPost('userName'),
-            'email' => $this->request->getPost('userEmail'),
-            'seat_taken' => $this->request->getPost('userTable'),
-            'reserve_date' => $this->request->getPost('userDate'),
-            'reserve_time' => date('H:i', (int)$this->request->getPost('userTime')),
-            'payment_mode' => $this->request->getPost('userPayment'),
-            'reserve_code' => rand(000000000, 999999999),
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
+            'name'          => $this->request->getPost('Name'),
+            'email'         => $this->request->getPost('Email'),
+            'seat_taken'    => $this->request->getPost('Table'),
+            'reserve_date'  => $this->request->getPost('Date'),
+            'reserve_time'  => date('H:i', (int)$this->request->getPost('Time')),
+            'payment_mode'  => $this->request->getPost('Payment'),
+            'status'        => "Waiting",
+            'reserve_code'  => rand(000000000, 999999999),
+            'created_at'    => date('Y-m-d H:i:s'),
+            'updated_at'    => date('Y-m-d H:i:s')
         ];
 
-        if ($validate) {
-            return redirect()->to('/reserve')->with('errors', $this->validator->getErrors());
-        }
+        //If validation returns false
+        if (!$this->validate($rules, $message)) {
+            return redirect()
+                ->to('/reserve')
+                ->withInput()
+                ->with('validation', $this->validator);
+        } //It doesn't need else because it already redirected
 
+        //If the condition is true and skipped
         $reservesModel = new ReservesModel();
         $reservesModel->save($data);
-        return redirect()->to('/reserve')->with('message', 'Reservation Success!!');
+        return redirect()
+            ->to('/reserve')
+            ->with('message', "Reservation completed. Please show the code given to the reception upon arrival.");
     }
 }

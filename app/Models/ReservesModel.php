@@ -14,7 +14,8 @@ class ReservesModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'name', 'email', 'seat_taken', 'reserve_date', 'reserve_time', 'payment_mode', 'reserve_code', 'created_at', 'updated_at'
+        'name', 'email', 'seat_taken', 'reserve_date', 'reserve_time',
+        'payment_mode', 'status', 'reserve_code', 'created_at', 'updated_at'
     ];
 
     // Dates
