@@ -1,0 +1,140 @@
+CRITICAL - 2023-11-20 14:13:45 --> syntax error, unexpected single-quoted string "required", expecting identifier or variable or "{" or "$"
+in APPPATH\Models\ReservesModel.php on line 29.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\reserve_web\\app\\Models\\ReservesModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ReservesModel')
+ 3 APPPATH\Controllers\ReservationController.php(16): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ReservesModel')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:02:58 --> Method name must be a string
+in APPPATH\Models\ReservesModel.php on line 53.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:12:38 --> syntax error, unexpected token "=>"
+in APPPATH\Models\ReservesModel.php on line 56.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\reserve_web\\app\\Models\\ReservesModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ReservesModel')
+ 3 APPPATH\Controllers\ReservationController.php(16): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ReservesModel')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:16:20 --> Method name must be a string
+in APPPATH\Models\ReservesModel.php on line 58.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:24:44 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:24:56 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:25:19 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:26:00 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:26:23 --> Array callback must have exactly two elements
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation([...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:28:07 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:28:10 --> Value of type null is not callable
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(17): App\Models\ReservesModel->createReservation(null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:29:25 --> CodeIgniter\HTTP\Request::fetchGlobal(): Argument #3 ($filter) must be of type ?int, string given, called in C:\xampp\htdocs\reserve_web\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 748
+in SYSTEMPATH\HTTP\RequestTrait.php on line 244.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(748): CodeIgniter\HTTP\Request->fetchGlobal('post', 'userName', 'userEmail', 'userTable')
+ 2 APPPATH\Controllers\ReservationController.php(17): CodeIgniter\HTTP\IncomingRequest->getPost('userName', 'userEmail', 'userTable', 'userDate', 'userTime')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:33:52 --> Array callback must have exactly two elements
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(18): App\Models\ReservesModel->createReservation([...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:36:28 --> CodeIgniter\HTTP\Request::fetchGlobal(): Argument #3 ($filter) must be of type ?int, string given, called in C:\xampp\htdocs\reserve_web\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 748
+in SYSTEMPATH\HTTP\RequestTrait.php on line 244.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(748): CodeIgniter\HTTP\Request->fetchGlobal('post', [...], 'stripped', null)
+ 2 APPPATH\Controllers\ReservationController.php(18): CodeIgniter\HTTP\IncomingRequest->getPost([...], 'stripped')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+WARNING - 2023-11-20 15:37:58 --> [DEPRECATED] Constant FILTER_SANITIZE_STRIPPED is deprecated in APPPATH\Controllers\ReservationController.php on line 18.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:37:58 --> Array callback must have exactly two elements
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(18): App\Models\ReservesModel->createReservation([...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
+CRITICAL - 2023-11-20 15:40:18 --> Array callback must have exactly two elements
+in APPPATH\Models\ReservesModel.php on line 60.
+ 1 APPPATH\Controllers\ReservationController.php(18): App\Models\ReservesModel->createReservation([...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ReservationController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ReservationController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\reserve_web\\public\\index.php')
