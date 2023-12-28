@@ -18,8 +18,6 @@ $this->section('body');
     </ul>
 </header>
 
-
-
 <main class="m-auto row d-flex container">
     <div class="col d-flex">
         <p>

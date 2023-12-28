@@ -9,3 +9,5 @@ $routes->get('/', 'ReservesController::index');
 
 $routes->get('reserve', 'ReservationController::index');
 $routes->post('reserve', 'ReservationController::create');
+
+$routes->get('menu', 'MenuController::index');

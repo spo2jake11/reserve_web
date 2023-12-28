@@ -65,10 +65,37 @@ class ReservationController extends BaseController
         } //It doesn't need else because it already redirected
 
         //If the condition is true and skipped
+
         $reservesModel = new ReservesModel();
         $reservesModel->save($data);
+
+        $this->print($data);
         return redirect()
-            ->to('/reserve')
+            ->to('reserve')
             ->with('message', "Reservation completed. Please show the code given to the reception upon arrival.");
+    }
+    public function print($data)
+    {
+        $textOutput = "
+            Subject: Reservation Information\n
+
+            Dear Mr/Ms/Mrs " . $data['name'] . "\n
+            
+            Your reservation is scheduled for:\n\n
+
+            Date: " . $data['reserve_date'] . "\n
+            Time: " . $data['reserve_time'] . "\n
+            
+            Your reference number for your reservation is: " . $data['reserve_code'] . "\n
+            
+            Kindly present the reference code at your arrival.\n
+            
+            Kind regards,\n
+            Chik n' Yats Dining";
+
+        $text = str_replace(' ', '_', preg_replace('/[^a-zA-Z0-9\s]/', ' ', $data['created_at'])) . '.txt';
+        $filePath = WRITEPATH . 'uploads/' . $text;
+
+        file_put_contents($filePath, $textOutput);
     }
 }
