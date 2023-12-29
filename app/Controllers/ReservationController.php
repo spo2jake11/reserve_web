@@ -69,7 +69,7 @@ class ReservationController extends BaseController
         $reservesModel = new ReservesModel();
         $reservesModel->save($data);
 
-        $this->print($data);
+        $this->print($data); //This function calls the printable to be saved as .txt file
         return redirect()
             ->to('reserve')
             ->with('message', "Reservation completed. Please show the code given to the reception upon arrival.");
