@@ -5,15 +5,12 @@ $this->section('body');
 
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
-        </svg>
-        <span class="fs-4">******** Dining</span>
+        <img src="<?= base_url('img/logo.png') ?>" alt="Logo" id="img_logo">
     </a>
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills" id="navbar">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">Reservation</a></li>
+        <li class="nav-item"><a href="menu" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="reserve" class="nav-link active">Reservation</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
     </ul>
 </header>
@@ -138,15 +135,6 @@ $this->section('body');
         <button class="btn btn-primary w-100 py-2 my-1" type="submit">Review Reservation</button>
     </form>
 </main>
-<style>
-    body {
-        background-color: skyblue;
-    }
-
-    .main_body {
-        background-color: lightgray;
-    }
-</style>
 <?=
 $this->endSection();
 ?>
