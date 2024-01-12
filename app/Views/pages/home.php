@@ -21,7 +21,7 @@ $this->section('body');
         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="menu" class="nav-link">Menu</a></li>
         <li class="nav-item"><a href="reserve" class="nav-link">Reservation</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="about" class="nav-link">About Us</a></li>
     </ul>
 </header>
 
@@ -34,33 +34,38 @@ $this->section('body');
 </article>
 
 <section class="w-75 mx-auto">
-    <div class="row my-5">
-        <div class="col">
-            <img src="/img/1.jpg" alt="" class="w-50 d-block mx-auto">
-        </div>
-        <div class="col mx-auto my-auto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, dolor omnis? Veniam unde voluptate repudiandae inventore et recusandae iste sed impedit facere, maxime enim explicabo! Quasi ipsam possimus odio beatae.</p>
-        </div>
-    </div>
-    <div class="row my-5">
-        <div class="col mx-auto my-auto">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, distinctio! Itaque iure impedit voluptas quidem voluptatum quisquam ex suscipit, repudiandae fugit minus iusto praesentium. Esse praesentium doloribus necessitatibus illo provident.</p>
-        </div>
-        <div class="col">
-            <img src="/img/2.jpg" alt="" class="w-50 d-block mx-auto">
-        </div>
+    <div class="my-5 mx-auto w-75">
+        <p class="fs-5">Welcome to Chick N' Yats. Home of the best Chicken Cuisine and a Paradise for Chicken food lovers!
+            Here at Chick N' Yats, we value our customer's taste and ensure that the food we serve are hygienically clean
+            and has been cooked and served with our finest ingredients and top-notch culinary equipment and skill from our esteemed chefs.</p>
     </div>
     <div class="row my-5">
         <div class="col">
-            <img src="/img/3.jpg" alt="" class="w-50 d-block mx-auto">
+            <img src="/img/menu/Baked Buffalo Chicken Thigh.png" alt="" class="w-75 d-block mx-auto">
         </div>
-        <div class="col mx-auto my-auto">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam neque deserunt obcaecati, porro adipisci dicta incidunt maiores pariatur reprehenderit nulla hic iste enim perspiciatis, nostrum dolor iusto earum illum ratione.</p>
+        <div class="col">
+            <img src="/img/menu/Orange Marmalade Roasted Chicken.png" alt="" class="w-75 d-block mx-auto">
+        </div>
+        <div class="col">
+            <img src="/img/menu/Chicken Sisig.png" alt="" class="w-75 d-block mx-auto">
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col">
+            <img src="/img/menu/Honey BBQ Chicken Bites.png" alt="" class="w-50 d-block mx-auto">
+        </div>
+        <div class="col">
+            <img src="/img/menu/Spinach Stuffed Breast Sandwich.png" alt="" class="w-50 d-block mx-auto">
+        </div>
+        <div class="col">
+            <img src="/img/menu/Whole Fried Chicken.png" alt="" class="w-50 d-block mx-auto">
         </div>
     </div>
 
-
-
+    <div class=" my-5 w-75 mx-auto">
+        <p class="fs-5">Thank you for your patronage for the Chick N' Yats restaurant. If you have problems with your reservation or with the website itself, please contact our
+            Help Desk on their email at chicknyatsresto@gmail.com or call us through this number : 09278154408 </p>
+    </div>
 </section>
 
 

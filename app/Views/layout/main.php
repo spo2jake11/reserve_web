@@ -50,13 +50,13 @@
     }
 
     .main_body {
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.8);
         min-height: 100%;
         margin-bottom: 10px;
     }
 
     footer {
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.8);
     }
 </style>
 

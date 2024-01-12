@@ -28,7 +28,7 @@ $this->section('body');
                     <a class="nav_menu nav-link" href="menu/#">Appetizers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav_menu nav-link" href="menu/#">Main Course</a>
+                    <a class="nav_menu nav-link" href="menu/#mainCourse">Main Course</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav_menu nav-link" href="menu/#">Deserts</a>
@@ -39,14 +39,34 @@ $this->section('body');
             </ul>
         </nav>
     </div>
-    <div class="row">
-        <div class="col mx-auto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo accusamus dolorum optio enim eum? Repellat, facilis suscipit. Porro, iusto expedita, eos quos consequatur esse culpa eum, ratione soluta aliquid fugiat!</p>
+    <section class="mx-auto" id="mainCourse">
+        <div class="row my-3">
+            <?php
+            $count = 0;
+            foreach ($mainCourse as $main) :
+                if ($count % 2 === 0) : ?>
+                    <div class="w-100"></div>
+                <?php
+                endif;
+                $img = str_replace("C:\\xampp\\htdocs\\reserve_web\\public", "", $main['image']);
+                ?>
+
+                <div class="col-md-6 row my-2">
+                    <div class="col">
+                        <img src="<?= $img ?>" alt="" class="w-75 mx-auto" style="height: 200px;">
+                    </div>
+                    <div class="col d-block">
+                        <h4><?= $main['name'] ?></h4>
+                        <p><?= $main['detail'] ?></p>
+                        <p>&#8369 <?= $main['price'] ?></p>
+                    </div>
+                </div>
+
+            <?php
+                $count++;
+            endforeach; ?>
         </div>
-        <div class="col mx-auto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, amet! Nostrum obcaecati quibusdam perferendis, velit nemo alias repudiandae tempore fugiat, fugit nisi sunt corporis cumque. Provident cumque quibusdam quia laboriosam?</p>
-        </div>
-    </div>
+    </section>
 </main>
 <?=
 $this->endSection();
