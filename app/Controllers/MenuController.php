@@ -13,8 +13,8 @@ class MenuController extends BaseController
         $menuModel = $db->table('menu_db');
         $data = [
             'mainCourse'    => $menuModel->getWhere(['category' => 'Main courses'])->getResultArray(),
-            'appetizer'    => $menuModel->getWhere(['category' => 'Appetizer'])->getResultArray(),
-            'dessert'    => $menuModel->getWhere(['category' => 'Dessert'])->getResultArray(),
+            'appetizer'    => $menuModel->getWhere(['category' => 'Appetizers'])->getResultArray(),
+            'dessert'    => $menuModel->getWhere(['category' => 'Desserts'])->getResultArray(),
             'beverages'    => $menuModel->getWhere(['category' => 'Beverages'])->getResultArray()
         ];
         return view("pages/menu", $data);

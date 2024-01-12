@@ -25,25 +25,121 @@ $this->section('body');
         <nav class="navbar navbar-expand navbar-light justify-content-center">
             <ul class="navbar-nav mx-auto fs-5">
                 <li class="nav-item">
-                    <a class="nav_menu nav-link" href="menu/#">Appetizers</a>
+                    <a class="nav_menu nav-link" href="menu/#appetizers">Appetizers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav_menu nav-link" href="menu/#mainCourse">Main Course</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav_menu nav-link" href="menu/#">Deserts</a>
+                    <a class="nav_menu nav-link" href="menu/#desserts">Desserts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav_menu nav-link" href="menu/#">Beverages</a>
+                    <a class="nav_menu nav-link" href="menu/#drinks">Beverages</a>
                 </li>
             </ul>
         </nav>
     </div>
+    <section class="mx-auto" id="appetizers">
+        <h5 class="bg-white text-center">
+            Appetizers
+        </h5>
+        <div class="row my-3">
+            <?php
+            $count = 0;
+            foreach ($appetizer as $main) :
+                if ($count % 2 === 0) : ?>
+                    <div class="w-100"></div>
+                <?php
+                endif;
+                $img = str_replace("C:\\xampp\\htdocs\\reserve_web\\public", "", $main['image']);
+                ?>
+
+                <div class="col-md-6 row my-2">
+                    <div class="col">
+                        <img src="<?= $img ?>" alt="" class="w-75 mx-auto" style="height: 200px;">
+                    </div>
+                    <div class="col d-block">
+                        <h4><?= $main['name'] ?></h4>
+                        <p><?= $main['detail'] ?></p>
+                        <p>&#8369 <?= $main['price'] ?></p>
+                    </div>
+                </div>
+
+            <?php
+                $count++;
+            endforeach; ?>
+        </div>
+    </section>
     <section class="mx-auto" id="mainCourse">
+        <h5 class="bg-white text-center">
+            Main Course
+        </h5>
         <div class="row my-3">
             <?php
             $count = 0;
             foreach ($mainCourse as $main) :
+                if ($count % 2 === 0) : ?>
+                    <div class="w-100"></div>
+                <?php
+                endif;
+                $img = str_replace("C:\\xampp\\htdocs\\reserve_web\\public", "", $main['image']);
+                ?>
+
+                <div class="col-md-6 row my-2">
+                    <div class="col">
+                        <img src="<?= $img ?>" alt="" class="w-75 mx-auto" style="height: 200px;">
+                    </div>
+                    <div class="col d-block">
+                        <h4><?= $main['name'] ?></h4>
+                        <p><?= $main['detail'] ?></p>
+                        <p>&#8369 <?= $main['price'] ?></p>
+                    </div>
+                </div>
+
+            <?php
+                $count++;
+            endforeach; ?>
+        </div>
+    </section>
+    <section class="mx-auto" id="desserts">
+        <h5 class="bg-white text-center">
+            Desserts
+        </h5>
+        <div class="row my-3">
+            <?php
+            $count = 0;
+            foreach ($dessert as $main) :
+                if ($count % 2 === 0) : ?>
+                    <div class="w-100"></div>
+                <?php
+                endif;
+                $img = str_replace("C:\\xampp\\htdocs\\reserve_web\\public", "", $main['image']);
+                ?>
+
+                <div class="col-md-6 row my-2">
+                    <div class="col">
+                        <img src="<?= $img ?>" alt="" class="w-75 mx-auto" style="height: 200px;">
+                    </div>
+                    <div class="col d-block">
+                        <h4><?= $main['name'] ?></h4>
+                        <p><?= $main['detail'] ?></p>
+                        <p>&#8369 <?= $main['price'] ?></p>
+                    </div>
+                </div>
+
+            <?php
+                $count++;
+            endforeach; ?>
+        </div>
+    </section>
+    <section class="mx-auto" id="drinks">
+        <h5 class="bg-white text-center">
+            Beverages
+        </h5>
+        <div class="row my-3">
+            <?php
+            $count = 0;
+            foreach ($beverages as $main) :
                 if ($count % 2 === 0) : ?>
                     <div class="w-100"></div>
                 <?php
